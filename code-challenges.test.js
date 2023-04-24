@@ -13,15 +13,35 @@
 // --------------------1) Create a function that takes in an array of objects and returns an array with a sentence about each person with their name capitalized.
 
 // a) Create a test with an expect statement using the variable provided.
+describe("storyTime", () => {
+  const people = [
+    { name: "ford prefect", occupation: "a hitchhiker" },
+    { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
+    { name: "arthur dent", occupation: "a radio employee" }
+  ]
+  it(" Function that takes in an array of objects and returns an array with a sentence about each person with their name capitalized", () => {
+    expect(storyTime(people)).toEqual(["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is president of the galaxy.", "Arthur Dent is a radio employee."])
+  })
+})
 
-const people = [
-  { name: "ford prefect", occupation: "a hitchhiker" },
-  { name: "zaphod beeblebrox", occupation: "president of the galaxy" },
-  { name: "arthur dent", occupation: "a radio employee" }
-]
 // Expected output: ["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is president of the galaxy.", "Arthur Dent is a radio employee."]
 
 // b) Create the function that makes the test pass.
+// Puesdo Code:
+// Create the function called story time to match the test.
+// Give the funciton one parameter called array to match data that will be passed in.
+// 
+const storyTime = (array) => {
+    newArray = array.name.split(" ")
+    newArray.map(value => {
+      value.charAt(0).toUpperCase()  
+    })
+    newArray.join("")
+    return ${array.name}
+}
+
+
+
 
 // --------------------2) Create a function that takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3.
 
