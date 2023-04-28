@@ -30,15 +30,36 @@ describe("storyTime", () => {
 // Puesdo Code:
 // Create the function called story time to match the test.
 // Give the funciton one parameter called array to match data that will be passed in.
-//
+// use the .map method to iterate through the array of objects.
+// inside .map set a new variable that will hold the key value pair object.name
+// Since the first and last name need to be capitilized use the .split method to break up each into its own   string. 
+// attached another .map hof to that so we can iterate through each new name string
+// inside of the second .map use .charAt to grab the the value of the first letter in each string 
+// Next use .toUpperCase to fix the name
+// Next use .slice to take out the old lowercase at the first index.
+// Use .join with the same spacing to bring the name back together.
+// Return string interpelation `${varialble holding name} is ${object.occupation}
+
+
 const storyTime = (array) => {
-    newArray = array.name.split(" ")
-    newArray.map(value => {
-      value.charAt(0).toUpperCase()
-    })
-    newArray.join("")
-    return ${array.name}
+  return array.map((object) => {
+    const newWords = object.name.split(" ").map((word) => {
+        return word.charAt(0).toUpperCase() + word.slice(1) }).join(" ")
+    return `${newWords} is ${object.occupation}.`
+  })
 }
+
+// PASS  ./code-challenges.test.js
+// storyTime
+//   ✓  Function that takes in an array of objects and returns an array with a sentence about each person with their name capitalized (1 ms)
+// onlyNumbers
+//   ✓ Function that takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3. 
+// cubeItAddIt
+//   ✓ Function that takes in an array of numbers and returns the sum of all the numbers cubed (1 ms)
+
+// Test Suites: 1 passed, 1 total
+// Tests:       3 passed, 3 total
+
 
 // --------------------2) Create a function that takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3.
 
